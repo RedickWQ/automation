@@ -5,6 +5,10 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
+/**
+ * @Author Paul.Wang
+ * @Date 2018/7/24
+ */
 public class TestngRetry implements IRetryAnalyzer {
 
 	private Logger logger = Logger.getLogger(TestngRetry.class);

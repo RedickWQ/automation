@@ -7,6 +7,10 @@ import org.testng.annotations.ITestAnnotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
+/**
+ * @Author Paul.Wang
+ * @Date 2018/7/24
+ */
 public class RetryListener implements IAnnotationTransformer {
 
 	@Override

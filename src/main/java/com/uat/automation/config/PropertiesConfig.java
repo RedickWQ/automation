@@ -20,7 +20,10 @@ import java.util.Map;
 public class PropertiesConfig {
     public boolean isMultiDrivers;
     public List<String> drivers = new ArrayList<>();
-    public Map<String,String> paramInfoMap = new HashMap<>();
+    public Map<String,String> paramInfo = new HashMap<>();
+    public String pn;
+
+
     public boolean getIsMultiDrivers(){
         return isMultiDrivers;
     }
@@ -34,10 +37,18 @@ public class PropertiesConfig {
         this.drivers = drivers;
     }
 
-    public Map<String,String> getParamInfoMap(){
-        return paramInfoMap;
+    public Map<String,String> getParamInfo(){
+        return paramInfo;
     }
-    public void setParamInfoMap(Map<String,String> paramInfoMap){
-        this.paramInfoMap = paramInfoMap;
+    public void setParamInfoMap(Map<String,String> paramInfo){
+        this.paramInfo = paramInfo;
+    }
+
+    public String getPn() {
+        return pn;
+    }
+
+    public void setPn(String pn) {
+        this.pn = pn;
     }
 }

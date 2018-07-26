@@ -18,9 +18,9 @@ public class RegisterHandler {
     @Autowired
     PropertiesConfig propertiesConfig;
 
-    @Bean
+    @Bean(name = "paramInfoBean")
     public ParamInfoBean getParamInfoBean(){
-        Map<String,String> beanMap = propertiesConfig.getParamInfoMap();
+        Map<String,String> beanMap = propertiesConfig.getParamInfo();
         return CommonUtils.map2Bean(beanMap,ParamInfoBean.class);
     }
 }

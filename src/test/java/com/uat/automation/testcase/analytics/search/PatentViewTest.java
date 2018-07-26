@@ -15,7 +15,7 @@ public class PatentViewTest extends TestBase {
     @Test(enabled = false)
     public void testDemo(){
         System.out.print("test demo");
-        initialBrowser("chrome");
+        initial("chrome");
         driver.get("https://www.baidu.com");
     }
 }
