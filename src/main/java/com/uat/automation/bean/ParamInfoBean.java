@@ -2,6 +2,8 @@ package com.uat.automation.bean;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @Author Paul.Wang
  * @Date 2018/7/23
@@ -14,6 +16,9 @@ public class ParamInfoBean extends BaseBean {
     private String pwd;
     private String url;
     private String pn;
+    //专利搜索的filter
+    private List<String> filters;
+    private String exportType;
 
 
 
@@ -47,5 +52,21 @@ public class ParamInfoBean extends BaseBean {
 
     public void setPn(String pn) {
         this.pn = pn;
+    }
+
+    public List<String> getFilters() {
+        return filters;
+    }
+
+    public void setFilters(List<String> filters) {
+        this.filters = filters;
+    }
+
+    public String getExportType() {
+        return exportType;
+    }
+
+    public void setExportType(String exportType) {
+        this.exportType = exportType;
     }
 }

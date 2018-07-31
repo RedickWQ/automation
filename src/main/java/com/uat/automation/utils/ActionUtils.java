@@ -31,7 +31,7 @@ public class ActionUtils {
     }
 
     /**
-     *
+     * close all tabs exclude current tab
      * @param driver
      * @param currentHandle
      */
@@ -43,4 +43,6 @@ public class ActionUtils {
             }
         }
     }
+
+
 }

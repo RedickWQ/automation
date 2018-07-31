@@ -33,6 +33,10 @@ public class TestBase extends AbstractTestNGSpringContextTests {
      * 根据传入不同的值，启动不同的浏览器
      */
     public void initial(String driverType) {
+        //详细介绍：https://www.oschina.net/translate/using-headless-mode-in-java-se
+        //关闭Headless模式
+        System.setProperty("java.awt.headless", "false");
+
         //获取参数的bean
         param = (ParamInfoBean) SpringUtils.getBean("paramInfoBean");
 //        //判断执行多浏览器兼容测试开关是否开启

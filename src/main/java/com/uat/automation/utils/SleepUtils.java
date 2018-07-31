@@ -22,12 +22,17 @@ public class SleepUtils {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+
     /**
-     * 睡眠工具
-     * @param driver WebDriver
-     * @param time Second
+     * thread to sleep
+     * @param millisecond 毫秒
      */
-    public static void sleepBySec(WebDriver driver,int time){
-        driver.manage().timeouts().implicitlyWait(time,TimeUnit.SECONDS);
+    public static void threadSleep(int millisecond){
+        try {
+            Thread.sleep(millisecond);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
+
 }
