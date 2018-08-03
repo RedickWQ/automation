@@ -5,6 +5,7 @@ import com.uat.automation.bean.ParamInfoBean;
 import com.uat.automation.exception.NotFindElementException;
 import com.uat.automation.pages.commonPages.ExportPage;
 import com.uat.automation.pages.commonPages.PatentsListPage;
+import com.uat.automation.utils.ActionUtils;
 import com.uat.automation.utils.RobotUtils;
 import com.uat.automation.utils.SleepUtils;
 import org.openqa.grid.web.servlet.LifecycleServlet;
@@ -118,11 +119,16 @@ public class PatentsListBusiness extends BaseBusiness {
 //            default:
 //                logger.error("your type is wrong");
 //        }
+        ActionUtils.switchWindowWithHandle(driver,false);
         exportPage.exportButton.click();
+        ActionUtils.switchWindowWithHandle(driver,true);
     }
 
 
-
+    /**
+     * create work space
+     * @param driver
+     */
     public void createWorkspace(WebDriver driver){
         patentsListPage = PageFactory.initElements(driver, PatentsListPage.class);
         SleepUtils.threadSleep(1000);
@@ -131,20 +137,26 @@ public class PatentsListBusiness extends BaseBusiness {
         SleepUtils.threadSleep(1000);
         patentsListPage.createWorkspace.click();
         RobotUtils.setAndctrlVClipboardData(folderName);
-        logger.info("created new workspace : "+folderName);
         RobotUtils.pressEnter();
+        logger.info("created new workspace : "+folderName);
         //close tab
-        patentsListPage.createCancel.click();
+        patentsListPage.saveButton.click();
 
     }
 
+    /**
+     * save patent to work space
+     * @param driver
+     */
     public void saveToWorkspace(WebDriver driver){
         patentsListPage = PageFactory.initElements(driver, PatentsListPage.class);
         SleepUtils.threadSleep(1000);
-        patentsListPage.workspaceButton.click();
+        patentsListPage.funcButtonDiv.findElements(By.tagName("button")).get(3).click();
+//        patentsListPage.workspaceButton.click();
         SleepUtils.threadSleep(500);
         patentsListPage.workspaceTab.click();
         patentsListPage.folder.click();
         patentsListPage.saveButton.click();
+        logger.info("save to workspace successfully");
     }
 }

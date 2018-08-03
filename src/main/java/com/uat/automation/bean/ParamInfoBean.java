@@ -19,7 +19,8 @@ public class ParamInfoBean extends BaseBean {
     //专利搜索的filter
     private List<String> filters;
     private String exportType;
-
+    //分享给对应的账户
+    private String shareToAccount;
 
 
     public String getUserName() {
@@ -68,5 +69,13 @@ public class ParamInfoBean extends BaseBean {
 
     public void setExportType(String exportType) {
         this.exportType = exportType;
+    }
+
+    public String getShareToAccount() {
+        return shareToAccount;
+    }
+
+    public void setShareToAccount(String shareToAccount) {
+        this.shareToAccount = shareToAccount;
     }
 }

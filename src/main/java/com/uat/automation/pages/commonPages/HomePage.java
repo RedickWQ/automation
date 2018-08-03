@@ -4,6 +4,8 @@ import com.uat.automation.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 /**
  * @Author Paul.Wang
  * @Date 2018/7/25
@@ -26,4 +28,8 @@ public class HomePage extends BasePage {
     //search button
     @FindBy(xpath = ".//*[@id='content-form']/button")
     public WebElement searchButton;
+
+    //homepage上方菜单键
+    @FindBy(xpath = "html/body/div[1]/div[1]/div/nav/ul/li")
+    public List<WebElement> menuItems;
 }

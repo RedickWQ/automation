@@ -7,9 +7,10 @@
         <listener class-name="com.uat.automation.common.RetryListener" />
     </listeners>
 
-    <test name = "test">
+    <test name = "trigger events automated">
         <classes>
-            <class name = "com.uat.automation.testcase.analytics.search.TestCase"></class>
+            <class name = "com.uat.automation.testcase.analytics.common.HomePageTest"></class>
+            <class name = "com.uat.automation.testcase.analytics.common.PatentsListPageTest"></class>
         </classes>
 
     </test>

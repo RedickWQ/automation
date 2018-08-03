@@ -11,6 +11,7 @@ import com.uat.automation.utils.SleepUtils;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -38,8 +39,8 @@ public class HomePageTest extends TestBase {
         homePageHandle = driver.getWindowHandle();
     }
 
-    @Test(enabled = false,priority = 2,description = "Clicked Learn Video")
-    public void clickLearnVideo() throws Exception{
+    @Test(priority = 2,description = "Clicked Learn Video")
+    public void clickLearnVideo(){
         homeBusiness.clickLearnVideo(driver);
         driver.switchTo().window(homePageHandle);
     }
@@ -50,49 +51,11 @@ public class HomePageTest extends TestBase {
         homeBusiness.searchPatent(driver,param);
     }
 
-    @Test(enabled = false,priority = 4,description = "Applied Patent Filter")
-    public void applyFilter(){
-        try {
-            List<String> filters = new ArrayList<>();
-            filters.add("IPC分类");
-            filters.add("CPC分类");
-            param.setFilters(filters);
-            patentsListBusiness.doFilters(driver,param);
-            SleepUtils.threadSleep(5000);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Test(enabled = false,priority = 5,description = "Copied Patent Query With Filters")
-    public void copyQuery(){
-        patentsListBusiness.copyQuery(driver);
-        SleepUtils.threadSleep(500);
+    @AfterClass
+    public void afterClass(){
+        ActionUtils.closeAllTabs(driver);
     }
 
 
-    @Test(enabled = false,priority = 6,description = "Saved Query")
-    public void saveQuery(){
-        patentsListBusiness.saveQuery(driver);
-    }
-
-
-    @Test(enabled = false,priority = 7,description = "Exported Patent Results")
-    public void exportPatent(){
-        param.setExportType("Excel");
-        patentsListBusiness.exportPatent(driver,param);
-    }
-
-
-    @Test(enabled = false,priority = 8,description = "Created Workspace, Created Workspace Folder,Saved To Workspace")
-    public void createWorkspace(){
-        patentsListBusiness.createWorkspace(driver);
-    }
-
-    @Test(priority = 8,description = "Saved To Workspace")
-    public void saveToWorkspace(){
-        patentsListBusiness.saveToWorkspace(driver);
-    }
 
 }

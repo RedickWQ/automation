@@ -22,6 +22,7 @@ public class PropertiesConfig {
     public List<String> drivers = new ArrayList<>();
     public Map<String,String> paramInfo = new HashMap<>();
     public String pn;
+    public String shareToAccount;
 
 
     public boolean getIsMultiDrivers(){
@@ -50,5 +51,13 @@ public class PropertiesConfig {
 
     public void setPn(String pn) {
         this.pn = pn;
+    }
+
+    public String getShareToAccount() {
+        return shareToAccount;
+    }
+
+    public void setShareToAccount(String shareToAccount) {
+        this.shareToAccount = shareToAccount;
     }
 }

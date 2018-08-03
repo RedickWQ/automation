@@ -45,4 +45,17 @@ public class ActionUtils {
     }
 
 
+    /**
+     * close all tabs
+     * @param driver
+     */
+    public static void closeAllTabs(WebDriver driver){
+        Set<String> handles = driver.getWindowHandles();
+        for (String handle : handles) {
+            driver.switchTo().window(handle);
+            driver.close();
+        }
+    }
+
+
 }

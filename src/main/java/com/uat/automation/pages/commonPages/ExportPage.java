@@ -23,6 +23,6 @@ public class ExportPage extends BasePage {
 
 
     //导出按钮
-    @FindBy(xpath=".//input[@value='导出']")
+    @FindBy(xpath="html/body/div[1]/div[2]/div[1]/div[1]/div[4]/button")
     public WebElement exportButton;
 }
